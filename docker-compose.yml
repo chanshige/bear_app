@@ -3,7 +3,7 @@ version: '3'
 services:
   php:
     container_name: bear-app_web
-    image: php73apache-with-composer
+    image: php71apache-with-composer
     build: ./.docker/php
     restart: always
     ports:

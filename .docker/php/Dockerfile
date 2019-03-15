@@ -1,4 +1,4 @@
-FROM php:7.3.3-apache
+FROM php:7.1.27-apache
 
 # php extensions install
 RUN apt-get update
