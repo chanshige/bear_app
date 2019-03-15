@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  php:
+    container_name: bear-app_web
+    image: php73apache-with-composer
+    build: ./.docker/php
+    restart: always
+    ports:
+      - "8081:80"
+    links:
+      - mysql
+    volumes:
+      - "./:/var/www/html"
+      - "./.docker/httpd/000-default.conf:/etc/apache2/sites-available/000-default.conf"
+    environment:
+      TZ: Asia/Tokyo
+
+  mysql:
+    container_name: bear-app_mysql_db
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: app_bear_db
+      MYSQL_USER: bear_db_user
+      MYSQL_PASSWORD: bear_db_password
+      TZ: Asia/Tokyo
