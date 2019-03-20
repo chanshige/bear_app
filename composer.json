@@ -6,6 +6,8 @@
     "require": {
         "php": ">=7.1.0",
         "bear/package": "^1.9",
+        "bear/aura-router-module": "^2.0",
+        "ray/aura-sql-module": "^1.6",
         "josegonzalez/dotenv": "^3.2"
     },
     "require-dev": {
