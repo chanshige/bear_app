@@ -10,8 +10,8 @@ CREATE TABLE IF NOT EXISTS app_bear_db.customer (
   street_address  varchar(255),
   tel             varchar(64),
   gender          int(4),
-  created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  updated_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  created_at      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   INDEX(account, prefecture_id)
 );
 -- sample data
