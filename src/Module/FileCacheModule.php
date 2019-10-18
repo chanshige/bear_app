@@ -21,6 +21,10 @@ final class FileCacheModule extends AbstractModule
      */
     protected function configure()
     {
-
+        $this->bindInterceptor(
+            $this->matcher->any(),
+            $this->matcher->annotatedWith(FileCache::class),
+            [FileCacheInterceptor::class]
+        );
     }
 }
