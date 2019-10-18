@@ -2,6 +2,7 @@
 namespace Framework\BearSunday\Resource\App\Customers;
 
 use BEAR\Resource\ResourceObject;
+use PDO;
 use Ray\AuraSqlModule\AuraSqlInject;
 use Ray\AuraSqlModule\AuraSqlSelectInject;
 
@@ -19,7 +20,7 @@ final class Index extends ResourceObject
         $statement = $this->pdo->prepare($this->select->getStatement());
         $statement->execute($this->select->getBindValues());
 
-        $result = $statement->fetch(\PDO::FETCH_ASSOC);
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
 
         $this->body = [
             'gettype' => gettype($result),

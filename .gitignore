@@ -14,3 +14,4 @@ phpunit.xml
 /docs/api/
 
 .idea
+composer.lock
